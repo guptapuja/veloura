@@ -11,9 +11,16 @@ const stripe = new Stripe(process.env.VITE_STRIPE_PUBLIC_KEY);
 app.use(express.json());
 // app.use(cors({ origin: "http://localhost:5173" }));
 // Allow your specific Cloudflare URL
+const allowedOrigins = ['https://veloura-ck9.pages.dev', 'http://localhost:5173'];
 app.use(cors({
-  origin: 'https://veloura-ck9.pages.dev' ,
-  optionsSuccessStatus: 200// Replace with your actual Cloudflare URL
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  optionsSuccessStatus: 200
 }));
 const port = process.env.PORT || 8080;
 
@@ -170,8 +177,8 @@ app.post("/create-checkout-session", async (req, res) => {
         quantity: 1 
       }],
       mode: 'payment',
-      success_url: 'http://localhost:5173?success=true',
-      cancel_url: 'http://localhost:5173?canceled=true',
+      success_url: 'https://veloura-ck9.pages.dev?success=true',
+      cancel_url: 'https://veloura-ck9.pages.dev?canceled=true',
     });
     res.json({ url: session.url });
   } catch (e) { 
