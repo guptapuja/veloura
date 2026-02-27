@@ -82,20 +82,20 @@ const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8080';
   };
 
   // 4. API Call
-  async function onGenerate() {
-    setLoading(true);
-    try {
-     const res = await fetch(`${API_BASE}/generate-itinerary`,{
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ city: place.city, daysRequested })
-      });
-      const data = await res.json();
-      setItinerary(data.itinerary);
-    } finally {
-      setLoading(false);
-    }
-  }
+  // async function onGenerate() {
+  //   setLoading(true);
+  //   try {
+  //    const res = await fetch(`${API_BASE}/generate-itinerary`,{
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify({ city: place.city, daysRequested })
+  //     });
+  //     const data = await res.json();
+  //     setItinerary(data.itinerary);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }
 
   return (
     <AnimatePresence>
