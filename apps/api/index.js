@@ -9,8 +9,14 @@ const app = express();
 const stripe = new Stripe(process.env.VITE_STRIPE_PUBLIC_KEY);
 
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173" }));
-
+// app.use(cors({ origin: "http://localhost:5173" }));
+const cors = require('cors');
+// Allow your specific Cloudflare URL
+app.use(cors({
+  origin: 'https://veloura-ck9.pages.dev' ,
+  optionsSuccessStatus: 200// Replace with your actual Cloudflare URL
+}));
+app.use(express.json());
 const u = (id) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=800&q=80`;
 
 const PLACES = [
