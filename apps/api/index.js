@@ -24,8 +24,11 @@ app.use(cors({
 }));
 const port = process.env.PORT || 8080;
 
-app.listen(port, "0.0.0.0", () => {
-  console.log(`Server is running on port ${port}`);
+// app.listen(port, "0.0.0.0", () => {
+//   console.log(`Server is running on port ${port}`);
+// });
+const server = app.listen(port, "0.0.0.0", () => {
+  console.log(`Veloura API specialized for Render/AWS running on port ${port}`);
 });
 app.use(express.json());
 const u = (id) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=800&q=80`;
@@ -188,7 +191,7 @@ app.post("/create-checkout-session", async (req, res) => {
 
 
 
-const server = app.listen(8080, () => console.log("API: http://localhost:8080"));
+// const server = app.listen(8080, () => console.log("API: http://localhost:8080"));
 const wss = new WebSocketServer({ server });
 const placeCounts = Object.create(null);
 
