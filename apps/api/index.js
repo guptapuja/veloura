@@ -10,7 +10,6 @@ const stripe = new Stripe(process.env.VITE_STRIPE_PUBLIC_KEY);
 
 app.use(express.json());
 // app.use(cors({ origin: "http://localhost:5173" }));
-const cors = require('cors');
 // Allow your specific Cloudflare URL
 app.use(cors({
   origin: 'https://veloura-ck9.pages.dev' ,
