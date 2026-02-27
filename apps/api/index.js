@@ -15,6 +15,11 @@ app.use(cors({
   origin: 'https://veloura-ck9.pages.dev' ,
   optionsSuccessStatus: 200// Replace with your actual Cloudflare URL
 }));
+const port = process.env.PORT || 8080;
+
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Server is running on port ${port}`);
+});
 app.use(express.json());
 const u = (id) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=800&q=80`;
 

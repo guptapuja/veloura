@@ -39,7 +39,7 @@ export default function App() {
 
     // 2. WebSocket Connection
     useEffect(() => {
-        const WS_URL = API_BASE.replace(/^https?:\/\//, 'ws://');
+        const WS_URL = API_BASE.replace("https://", "wss://");
         const conn = createWS(WS_URL, (data: any) => {
             if (data?.type === "planning_count") {
                 setCounts((prev) => ({ ...prev, [data.placeId]: data.count }));
