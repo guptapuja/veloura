@@ -129,7 +129,24 @@ const fetchWeather = async () => {
       {open && place && (
         <>
           <motion.div onClick={onClose} initial={{ opacity: 0 }} animate={{ opacity: 0.6 }} style={{ position: "fixed", inset: 0, background: "#000", zIndex: 100 }} />
-          <motion.div initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} style={{ position: "fixed", right: 0, top: 0, height: "100vh", width: "min(550px, 92vw)", background: "#0B0B0D", zIndex: 101, padding: 30, overflowY: "auto", borderLeft: "1px solid #333" }}>
+          <motion.div 
+  initial={{ x: "100%" }} 
+  animate={{ x: 0 }} 
+  exit={{ x: "100%" }} 
+  style={{ 
+    position: "fixed", 
+    right: 0, 
+    top: 0, 
+    height: "100vh", 
+    width: "min(550px, 92vw)", 
+    background: "#0B0B0D", 
+    zIndex: 101, 
+    /* 🏛️ TECH LEAD FIX: Added 80px top padding to clear the Fixed Header */
+    padding: "80px 30px 30px 30px", 
+    overflowY: "auto", 
+    borderLeft: "1px solid #333" 
+  }}
+>
 
             <div style={{ display: 'flex', overflowX: 'auto', gap: 12, marginBottom: 20, scrollbarWidth: 'none' }}>
               {place.images && place.images.map((img: string, i: number) => (
