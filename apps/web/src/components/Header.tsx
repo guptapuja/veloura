@@ -14,7 +14,7 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
     zIndex: 9999, // Absolute top layer
     background: 'rgba(11, 11, 13, 0.95)',
     backdropFilter: 'blur(15px)',
-    height: '70px',
+    height: '60px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
