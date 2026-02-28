@@ -6,12 +6,20 @@ interface HeaderProps {
 
 export default function Header({ activeTab, setActiveTab }: HeaderProps) {
   return (
-    <header style={{
-        position: 'sticky', top: 0, zIndex: 1000,
-        background: 'rgba(11, 11, 13, 0.85)', backdropFilter: 'blur(15px)',
-        borderBottom: '1px solid rgba(198, 165, 92, 0.2)',
-        padding: '12px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center'
-    }}>
+<header style={{
+    position: 'fixed', // Standard for Elite navigation
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 9999, // Absolute top layer
+    background: 'rgba(11, 11, 13, 0.95)',
+    backdropFilter: 'blur(15px)',
+    height: '70px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '0 40px'
+}}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <h1 style={{ fontSize: '1.2rem', margin: 0, color: '#C6A55C', fontWeight: 900, letterSpacing: '-1px' }}>VELOURA</h1>
             <span style={{ fontSize: '0.55rem', border: '1px solid #C6A55C', padding: '1px 5px', borderRadius: 4, color: '#C6A55C', fontWeight: 900 }}>ELITE</span>
