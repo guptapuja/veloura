@@ -23,7 +23,9 @@ Frontend: React.js with Webpack 5
 
 Payments: Stripe API
 
-DevOps: Docker, AWS ECR, and Jenkins pipelines for automated CI/CD
+Cloudflare for DNS management, SSL, and CDN caching to reduce latency for global users.
+
+Cloud Hosting: Specialized in multi-platform deployments, including AWS for enterprise scale and Render/Erender for rapid prototyping and preview environments.
 
 Monitoring: Live monitoring tools (FFmpeg-based) for verifying stream/media integrity within the platform
 
