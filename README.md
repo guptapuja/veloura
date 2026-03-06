@@ -9,7 +9,7 @@ Secure Checkout: Implemented a robust payment flow using Stripe, handling webhoo
 Error Handling: Designed a fault-tolerant payment state machine to manage interrupted sessions or declined transactions.
 
 2. Performance & Scalability
-Microfrontend Potential: The application is structured to support a Microfrontend (MFE) architecture, allowing the "Booking Engine" and "Search" modules to be deployed independently.
+ The application is structured to support a Microfrontend (MFE) architecture, allowing the "Booking Engine" and "Search" modules to be deployed independently.
 
 Global Delivery: Optimized for global users by utilizing CDNs for static assets and implementing lazy-loading for heavy media components.
 
