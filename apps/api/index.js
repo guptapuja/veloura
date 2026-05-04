@@ -6,7 +6,7 @@ import { WebSocketServer } from "ws";
 import Stripe from 'stripe';
 const app = express();
 // const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
- const stripe = new Stripe(process.env.VITE_STRIPE_SECRET_KEY);
+ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 app.use(express.json());
 // app.use(cors({ origin: "http://localhost:5173" }));
